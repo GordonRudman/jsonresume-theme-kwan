@@ -377,7 +377,8 @@ h4 > .fa {
     content: none !important;
   }
   .pagebreak {
-    page-break-before: always;
+    page-break-before: auto;
+    page-break-inside: avoid;
   }
   .background-card h4:not(:first-child) {
     margin-top: 0 !important;
@@ -412,5 +413,5 @@ h4 > .fa {
   }
   blockquote {
     font-size: 100%;
-  }
+  } 
 }

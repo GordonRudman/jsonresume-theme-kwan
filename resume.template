@@ -101,29 +101,30 @@
             <h4 id="work-experience"> <span class="fa fa-lg fa-pencil-square-o"></span> <span class="title">Work Experience</span> </h4>
             <ul class="list-unstyled">
               {{#each resume.work}}
-                <li class="card-nested">
-                  <div class="content has-sidebar">
-                    <p class="clear-margin-sm">
-                      <strong>{{position}}</strong>,
-                      {{#if website}}<a href="{{website}}" target="_blank">{{company}}</a>{{else}}{{company}}{{/if}}
-                    </p>
-                    <p class="text-muted">
-                      <small>
-                        <span class="space-right"> {{startDate}} - {{#if endDate}} {{endDate}} {{else}} Present {{/if}} </span>
-                        {{#if duration}} <span> <i class="fa fa-clock-o icon-left"></i> {{duration}} </span> {{/if}}
-                      </small>
-                    </p>
-                    <p>{{summary}}</p>
-                    {{#if highlights}}
-                      <ul>
-                        {{#each highlights}}
-                          <li> {{.}} </li>
-                        {{/each}}
-                      </ul>
-                    {{/if}}
-                  </div>
-
-                </li>
+                <div class="pagebreak">
+                  <li class="card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>{{position}}</strong>,
+                        {{#if website}}<a href="{{website}}" target="_blank">{{company}}</a>{{else}}{{company}}{{/if}}
+                      </p>
+                      <p class="text-muted">
+                        <small>
+                          <span class="space-right"> {{startDate}} - {{#if endDate}} {{endDate}} {{else}} Present {{/if}} </span>
+                          {{#if duration}} <span> <i class="fa fa-clock-o icon-left"></i> {{duration}} </span> {{/if}}
+                        </small>
+                      </p>
+                      <p>{{summary}}</p>
+                      {{#if highlights}}
+                        <ul>
+                          {{#each highlights}}
+                            <li> {{.}} </li>
+                          {{/each}}
+                        </ul>
+                      {{/if}}
+                    </div>
+                  </li>
+                </div>
               {{/each}}
             </ul>
 
@@ -182,30 +183,32 @@
             {{/if}}
 
             {{#if resume.volunteer}}
-            <h4 id="volunteer-work"><span class="fa fa-lg fa-child"></span> <span class="title">Volunteer Work</span> </h4>
-            <ul class="list-unstyled">
-              {{#each resume.volunteer}}
-                <li class="card-nested">
-                  <div class="content has-sidebar">
-                    <p class="clear-margin-sm">
-                      <strong>{{position}}</strong>,&nbsp;
-                      {{organization}}
-                    </p>
-                    <p class="text-muted">
-                      <small>
-                        {{startDate}} - {{#if endDate}} {{endDate}} {{else}} Present {{/if}}
-                      </small>
-                    </p>
-                    <p>{{summary}}</p>
-                    <ul>
-                      {{#each highlights}}
-                        <li> {{.}} </li>
-                      {{/each}}
-                    </ul>
-                  </div>
-                </li>
-              {{/each}}
-            </ul>
+            <div class="pagebreak">
+              <h4 id="volunteer-work"><span class="fa fa-lg fa-child"></span> <span class="title">Volunteer Work</span> </h4>
+              <ul class="list-unstyled">
+                {{#each resume.volunteer}}
+                  <li class="card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>{{position}}</strong>,&nbsp;
+                        {{organization}}
+                      </p>
+                      <p class="text-muted">
+                        <small>
+                          {{startDate}} - {{#if endDate}} {{endDate}} {{else}} Present {{/if}}
+                        </small>
+                      </p>
+                      <p>{{summary}}</p>
+                      <ul>
+                        {{#each highlights}}
+                          <li> {{.}} </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>              
             {{/if}}
 
             {{#if resume.publications}}
@@ -256,14 +259,16 @@
             <h4 id="references"><span class="fa fa-lg fa-thumbs-up"></span> <span class="title">References</span> </h4>
             <ul class="list-unstyled">
               {{#each resume.references}}
-                <li class="card-nested">
-                  <p>
-                    <strong>{{name}}</strong>
-                  </p>
-                  <blockquote class="quote">
-                    <p class="clear-margin">{{reference}}</p>
-                  </blockquote>
-                </li>
+                <div class="pagebreak">
+                  <li class="card-nested">
+                    <p>
+                      <strong>{{name}}</strong>
+                    </p>
+                    <blockquote class="quote">
+                      <p class="clear-margin">{{reference}}</p>
+                    </blockquote>
+                  </li>
+                </div>
               {{/each}}
             </ul>
             {{/if}}

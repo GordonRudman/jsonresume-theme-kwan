@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-kwan-linkedin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Slightly modified Kwan theme for JsonResume.",
   "main": "index.js",
   "repository": {
