@@ -1,4 +1,4 @@
-# Kwan Theme 
+# Kwan Theme with LinkedIn date calculations
 
 This is a fork from the [Kwan Theme](https://github.com/icoloma/jsonresume-theme-kwan), modified to have similar date calculations to LinkedIn, so that the data stays consistent.
 
