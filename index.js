@@ -108,6 +108,16 @@ function render(resume) {
             start_date = work_info.startDate && new Date( work_info.startDate ),
             end_date = work_info.endDate && new Date( work_info.endDate );
 
+            // console.log('');
+            // console.log('');
+            // console.log('');
+            // console.log('work_info.startDate = ' + work_info.startDate);
+            // console.log('start_date = ' + start_date);
+            // console.log('');
+            // console.log('work_info.endDate = ' + work_info.endDate);
+            // console.log('end_date = ' + end_date);
+            // console.log('');
+
         if ( start_date ) {
             work_info.startDate = moment( start_date ).format( date_format );
         }
@@ -116,14 +126,30 @@ function render(resume) {
             work_info.endDate = moment( end_date ).format( date_format );
         }
 
+
         did_leave_company = !! end_date;
 
-        if ( start_date ) {
-            end_date = end_date || new Date();
+        if ( start_date ) 
+        {
+            end_date = end_date || new Date(); 
+            
+            //Convert dates to be compatible with how LinkedIn does their calculations, which is admittedly a bit weird
+            start_date = new Date(Date.UTC(start_date.getUTCFullYear(), start_date.getUTCMonth(), 1)); // force to first day of the month
+            end_date = new Date(Date.UTC(end_date.getUTCFullYear(), end_date.getUTCMonth()+1, 5)); // force to 5th day of the next month
+            
+            //console.log('start_date2 = ' + start_date.toISOString());
+            //console.log('end_date2 = ' + end_date.toISOString());
+
             work_info.duration = humanizeDuration(
                 moment.duration( end_date.getTime() - start_date.getTime() ),
                 did_leave_company )
         }
+
+        // //console.log('end_date - start_date = ' + (end_date.getTime() - start_date.getTime()));
+        // console.log('moment.duration = ' + (moment.duration( end_date.getTime() - start_date.getTime() )));
+        // console.log('humanizeDuration = ' + (humanizeDuration(
+        //     moment.duration( end_date.getTime() - start_date.getTime() ),
+        //     did_leave_company )));
     });
 
     _.each( resume.skills, function( skill_info ) {
