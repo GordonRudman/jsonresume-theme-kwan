@@ -55,6 +55,18 @@
                     </div>
                   {{/if}}
 
+                  {{#if website}}
+                    <div class="detail">
+                      <span class="icon">
+                        <i class="fa fa-lg fa-globe"></i>
+                      </span>
+
+                      <a href="{{website}}" class="info" itemprop="website">
+                        {{website}}
+                      </a>
+                    </div>
+                  {{/if}}
+
                   {{#if location}}
                     <div class="detail">
                       <span class="icon">
